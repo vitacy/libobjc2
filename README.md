@@ -13,13 +13,15 @@ run build-win10.bat
 
 it will install to build/install dir
 
-test objc
+test objc using clang
 
+```bash
 clang test.m -o test.exe -fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
+```
 
 ```objc
-//OBJCFLAGS=-fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
 //test.m
+//OBJCFLAGS=-fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
 #include <stdio.h>
 __attribute__((objc_root_class)) @interface Test
   + (void) test;
@@ -33,5 +35,4 @@ int main() {
   [Test test];
   return 0;
 }
-clang test.m -o test.exe -fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
 ```
