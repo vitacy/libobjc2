@@ -14,7 +14,10 @@ run build-win10.bat
 it will install to build/install dir
 
 test objc
-//clang test.m -o test.exe -fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
+
+clang test.m -o test.exe -fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
+
+```objc
 //OBJCFLAGS=-fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
 //test.m
 #include <stdio.h>
@@ -31,4 +34,4 @@ int main() {
   return 0;
 }
 clang test.m -o test.exe -fblocks -fobjc-runtime=gnustep-2.0 -fuse-ld=lld-link -l objc
-
+```
